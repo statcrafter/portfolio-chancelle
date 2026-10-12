@@ -426,8 +426,10 @@ html,body{overflow-x:clip;}
   .mail{min-width:0;overflow-wrap:anywhere;}
   .cvbtn.full{flex-wrap:wrap;}
 }
-@media(max-width:640px){
-  .tip::after{max-width:min(240px,70vw);}
+/* Sur mobile, l'info-bulle n'existe qu'au toucher et s'affiche en bas de l'écran */
+@media(max-width:900px){
+  .tip::after{display:none;}
+  .tip:hover::after,.tip:focus::after{display:block;position:fixed;left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:10px 14px;font-size:13px;opacity:1;transform:none;}
 }
 
 @media(prefers-reduced-motion:reduce){.hc.live i{animation:none;}.ind,.to-top,.tip::after{transition:none;}}
