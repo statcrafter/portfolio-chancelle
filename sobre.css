@@ -12,6 +12,9 @@
 /* Base : 1rem = 14px, comme le text-sm d'ISE */
 html{font-size:87.5%;scroll-padding-top:72px;}
 body{font-size:14px;line-height:1.6;}
+/* Sur ordinateur, tout un peu plus grand, proche de la taille d'origine */
+@media(min-width:1024px){html{font-size:100%;}body{font-size:16px;}}
+/* (titres agrandis plus bas, après leurs règles de base) */
 h1,h2,h3,h4{font-family:var(--font-heading);font-weight:600;letter-spacing:-.015em;line-height:1.25;}
 .wrap{padding:0 48px;}
 @media(max-width:1024px){.wrap{padding:0 32px;}}
@@ -55,6 +58,7 @@ section{padding:56px 0;border-top:1px solid var(--line);}
 /* En-têtes de section : à gauche, sans ornement */
 .sec-head{text-align:left;margin:0 0 32px;max-width:42rem;}
 .sec-head h2,.cta-grid h2,.passion h2{font-size:1.43rem;letter-spacing:-.02em;}
+@media(min-width:1024px){.sec-head h2,.cta-grid h2,.passion h2{font-size:1.9rem;}}
 .sec-head p{margin-top:12px;font-size:1rem;color:var(--ink2);line-height:1.7;}
 .subhead{font-size:1rem;font-weight:500;color:var(--ink3);margin:40px 0 12px;}
 .chips-bar,.tabs,.legend{justify-content:flex-start;}
@@ -84,7 +88,7 @@ section{padding:56px 0;border-top:1px solid var(--line);}
 .hero2{padding:104px 0 0;background:#fff;border-top:0;}
 .h2-chips{margin:0 0 20px;gap:6px;}
 .h2-name{font-family:var(--font-heading);font-weight:500;font-size:1rem;color:var(--ink2);margin-bottom:10px;}
-.hero2 h1{font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.15;letter-spacing:-.025em;font-weight:600;color:var(--navy);max-width:760px;margin-bottom:16px;text-wrap:balance;}
+.hero2 h1{font-size:clamp(1.9rem,3.6vw,3.1rem);line-height:1.15;letter-spacing:-.025em;font-weight:600;color:var(--navy);max-width:920px;margin-bottom:16px;text-wrap:balance;}
 .h2-lead{font-size:1.07rem;line-height:1.7;max-width:600px;margin-bottom:24px;color:var(--ink2);}
 .h2-kw{font-size:.93rem;margin:-12px 0 24px;}
 .h2-cta{gap:8px 24px;align-items:center;}
