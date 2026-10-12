@@ -418,6 +418,23 @@ footer{font-size:.93rem;}
 .to-top.show{opacity:1;pointer-events:auto;transform:none;}
 .to-top:hover{border-color:var(--sky);color:var(--primary);}
 
+/* Moments clés du parcours : bordure lumineuse qui tourne et étoile qui scintille */
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg;}
+@keyframes beam{to{--ang:360deg;}}
+@keyframes twinkle{0%,100%{transform:rotate(0) scale(1);}50%{transform:rotate(90deg) scale(.8);}}
+.tl-item.key{border-bottom-color:transparent;}
+.tl-item.key .tl-date{color:var(--navy);font-weight:600;}
+.tl-item.key .tl-card{position:relative;padding:14px 18px;margin:-2px 0;border:1.5px solid transparent;border-radius:10px;
+  background:linear-gradient(#fff,#fff) padding-box,conic-gradient(from var(--ang),var(--line) 0 62%,var(--sky) 76%,var(--primary) 86%,var(--line) 96%) border-box;}
+.anim .tl-item.key .tl-card{animation:beam 5s linear infinite;}
+.tl-item.key:nth-child(2n) .tl-card{animation-delay:-2.5s;}
+.kind-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:4px;}
+.kind-row .kind{margin:0;}
+.key-badge{display:inline-flex;align-items:center;gap:5px;padding:2px 8px 2px 6px;border-radius:100px;background:var(--pale);color:var(--primary);font-size:.79rem;font-weight:600;}
+.key-badge svg{width:12px;height:12px;fill:currentColor;}
+.anim .key-badge svg{animation:twinkle 2.8s ease-in-out infinite;}
+.fchip-key::before{content:"✦";margin-right:5px;color:var(--primary);}
+
 /* Mobile : rien ne doit dépasser la largeur de l'écran */
 html,body{overflow-x:clip;}
 @media(max-width:900px){
