@@ -440,6 +440,28 @@ footer{font-size:.93rem;}
 .tl-item.key .tl-card{padding:18px 22px;}
 .fchip-key::before{content:"✦";margin-right:5px;color:var(--primary);}
 
+/* Version plus éclatante : halo bleu, fond teinté, badge plein avec reflet */
+@keyframes shine{0%,60%{background-position:-120% 0;}100%{background-position:220% 0;}}
+@keyframes glow{0%,100%{opacity:.55;}50%{opacity:.95;}}
+.tl-item.key .tl-date{color:var(--primary);font-weight:700;font-size:1.21rem;}
+.tl-item.key .tl-card{isolation:isolate;border:0;border-radius:14px;background:none;box-shadow:0 14px 30px -18px rgba(26,115,217,.55);animation:none!important;}
+.tl-item.key .tl-card::before,.tl-item.key .tl-card::after{content:"";position:absolute;border-radius:inherit;}
+.tl-item.key .tl-card::before{inset:-3px;z-index:-2;
+  background:conic-gradient(from var(--ang),transparent 0 58%,#7cc4ff 72%,var(--primary) 84%,transparent 96%);filter:blur(12px);opacity:.75;}
+.tl-item.key .tl-card::after{inset:0;z-index:-1;border:2px solid transparent;
+  background:linear-gradient(160deg,#fff 40%,#eef5ff) padding-box,conic-gradient(from var(--ang),#cfe0f7 0 55%,#7cc4ff 70%,var(--primary) 82%,#00b2ff 88%,#cfe0f7 97%) border-box;}
+.anim .tl-item.key .tl-card::before{animation:beam 5s linear infinite,glow 2.5s ease-in-out infinite;}
+.anim .tl-item.key .tl-card::after{animation:beam 5s linear infinite;}
+.tl-item.key:nth-child(2n) .tl-card::before{animation-delay:-2.5s,0s;}
+.tl-item.key:nth-child(2n) .tl-card::after{animation-delay:-2.5s;}
+.tl-item.key .tl-card h4{color:var(--navy);}
+.key-badge{padding:3px 10px 3px 8px;color:#fff;font-weight:700;letter-spacing:.01em;
+  background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%) no-repeat,linear-gradient(90deg,var(--primary),#2fa4ff);
+  background-size:60% 100%,100% 100%;box-shadow:0 4px 12px -4px rgba(26,115,217,.7);}
+.key-badge svg{width:13px;height:13px;}
+.anim .key-badge{animation:shine 3.2s ease-in-out infinite;}
+.fchip-key{color:var(--primary);font-weight:700;}
+
 /* Mobile : rien ne doit dépasser la largeur de l'écran */
 html,body{overflow-x:clip;}
 @media(max-width:900px){
